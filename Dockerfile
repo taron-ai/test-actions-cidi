@@ -48,3 +48,5 @@ RUN mkdir -p ${BOOST_DIR} \
     && ./b2 --without-python --prefix=/usr -j ${CONCURRENT_PROCESSES} link=shared runtime-link=shared install \
     && cd .. && rm -rf ${BOOST_DIR} \
     && rm -rf /var/cache/*
+
+RUN  g++-8 --version
