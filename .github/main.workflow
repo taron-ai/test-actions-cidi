@@ -9,6 +9,11 @@ action "Lint" {
   args = "lint"
 }
 
+action "Test" {
+  uses = "actions/action-builder/shell@master"
+  runs = "make"
+  args = "test"
+}
 
 action "Build" {
   needs = ["Lint", "Test"]
