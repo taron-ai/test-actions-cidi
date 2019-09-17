@@ -40,4 +40,3 @@ action "Publish" {
   runs = "make"
   args = "publish"
 }
-
