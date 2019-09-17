@@ -3,6 +3,17 @@ workflow "Build and Publish" {
   resolves = "Publish"
 }
 
+action "Lint" {
+  uses = "actions/action-builder/shell@master"
+  runs = "make"
+  args = "lint"
+}
+
+action "Test" {
+  uses = "actions/action-builder/shell@master"
+  runs = "make"
+  args = "test"
+}
 
 action "Build" {
   needs = ["Lint", "Test"]
@@ -29,3 +40,4 @@ action "Publish" {
   runs = "make"
   args = "publish"
 }
+
